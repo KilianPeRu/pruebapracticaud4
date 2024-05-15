@@ -110,14 +110,14 @@ public class ReservaMesa {
             {
                 mesaSalida = iIzq;
                 noEncontrada = false;
-                iIzq--;
             }
+            iIzq--;
 
             if (noEncontrada && iDer < array.length && array[iDer] + numPersonas <= tamanioMesa) {
                 mesaSalida = iDer;
                 noEncontrada = false;
-                iDer++;
             }
+            iDer++;
 
         }
 
@@ -138,14 +138,14 @@ public class ReservaMesa {
             {
                 mesaSalida = iIzq;
                 noEncontrada = false;
-                iIzq++;
             }
+            iIzq++;
 
             if (noEncontrada && iDer >= mesaBuscada && array[iDer] + numPersonas <= tamanioMesa) {
                 mesaSalida = iDer;
                 noEncontrada = false;
-                iDer++;
             }
+            iDer++;
 
         }
 
