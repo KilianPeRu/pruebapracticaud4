@@ -64,7 +64,12 @@ public class BookingServiceTest {
      */
     @Test
     void getAvailablePlaceCountTest() {
-
+        Room room = Mockito.mock(Room.class);
+        Room room2 = Mockito.mock(Room.class);
+        Room room3 = Mockito.mock(Room.class);
+        doReturn(10).when(room).getCapacity();
+        bookingService.getAvailablePlaceCount();
+        roomService.getAvailableRooms();
     }
 
     /**
