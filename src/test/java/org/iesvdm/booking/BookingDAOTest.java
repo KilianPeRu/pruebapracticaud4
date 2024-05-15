@@ -97,7 +97,18 @@ public class BookingDAOTest {
      */
     @Test
     void deleteTest() {
+        BookingRequest bookingRequest = new BookingRequest("1", LocalDate.of(2024,05,17),LocalDate.of(2024,05,18),2,true);
+        BookingRequest bookingRequest2 = new BookingRequest("9", LocalDate.of(2024,05,17),LocalDate.of(2024,05,18),3,true);
+        String book1 = bookingDAO.save(bookingRequest);
+        String book2 = bookingDAO.save(bookingRequest2);
+        bookingDAO.delete(book1);
+        Collection<BookingRequest> mapa = bookingDAO.getAllBookingRequests();
 
+
+        Map<String, BookingRequest> map = new HashMap<>();
+        map.put(book2, bookingRequest2);
+
+        assertThat(bookingDAO.getAllUUIDs()).isEqualTo(map.keySet());
     }
 
     /**
